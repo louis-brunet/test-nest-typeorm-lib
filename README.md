@@ -26,7 +26,7 @@ Something like `missing environment variable DATABASE_*`.
 
 
 ## Potential fixes
-Need only one instance of (source: [docs](https://docs.nestjs.com/faq/common-errors#cannot-resolve-dependency-error), [github issue](https://github.com/nestjs/nest/issues/10414))
+Need only one instance of the @nestjs/core dependency (source: [docs](https://docs.nestjs.com/faq/common-errors#cannot-resolve-dependency-error), [github issue](https://github.com/nestjs/nest/issues/10414))
 
 Options:
 - add shared @nestjs/* deps in root package.json ;

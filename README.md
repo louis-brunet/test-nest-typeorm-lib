@@ -1,7 +1,9 @@
+## Error
+
 ```bash
-yarn 
-yarn workspace mylib run build
-yarn workspace myapp run build
+yarn &&
+yarn workspace mylib run build &&
+yarn workspace myapp run build &&
 NODE_ENV=development yarn workspace myapp run start
 ```
 
@@ -17,3 +19,17 @@ Potential solutions:
     imports: [ /* the Module containing ModuleRef */ ]
   })
 ```
+
+## Expected behaviour
+
+Something like `missing environment variable DATABASE_*`.
+
+
+## Potential fixes
+Need only one instance of (source: [docs](https://docs.nestjs.com/faq/common-errors#cannot-resolve-dependency-error), [github issue](https://github.com/nestjs/nest/issues/10414))
+
+Options:
+- add shared @nestjs/* deps in root package.json ;
+- .yarnrc.yml: `nmHoistingLimits: none`;
+- use nest [monorepo](https://docs.nestjs.com/cli/monorepo)  managed by nest cli
+

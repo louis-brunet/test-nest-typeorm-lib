@@ -3,5 +3,8 @@
   "workspaces": [
     "apps/*",
     "libs/*"
-  ]
+  ],
+  "scripts": {
+    "clean": "rm -r ./node_modules ./apps/myapp/dist ./apps/myapp/node_modules ./libs/mylib/lib ./libs/mylib/node_modules"
+  }
 }

@@ -2,10 +2,6 @@ import { resolve } from 'path';
 import { DataSourceOptions } from 'typeorm';
 
 export interface IDatabaseConfig {
-  databaseHost: string;
-  databaseName: string;
-  databaseUser: string;
-  databasePassword: string;
   databasePort: number;
   connectionUrlReadonly?: string;
   migrationsRun?: boolean;
@@ -17,10 +13,10 @@ export function configureDataSource(config: IDatabaseConfig): DataSourceOptions 
 
   return {
     type: 'postgres' as const,
-    host: config.databaseHost,
-    database: config.databaseName,
-    username: config.databaseUser,
-    password: config.databasePassword,
+    // host: config.databaseHost,
+    // database: config.databaseName,
+    // username: config.databaseUser,
+    // password: config.databasePassword,
     port: config.databasePort,
     entities: [basePath + '/**/*.model.{js,ts}'],
     migrations: [resolve(__dirname, '../migrations/*.{js,ts}')],
